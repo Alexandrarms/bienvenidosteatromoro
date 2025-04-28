@@ -57,7 +57,7 @@ public class BienvenidosTeatroMoro {
         mapaAsientos.put("PLATEA", new char[20]);
         mapaAsientos.put("BALCÓN", new char[20]);
         for (char[] zona : mapaAsientos.values()) {
-            Arrays.fill(zona, '0'); //'0' libre, 'R' reservado, 'X' vendido
+            Arrays.fill(zona, '0'); 
         }
     }
    
@@ -110,7 +110,7 @@ public class BienvenidosTeatroMoro {
         double totalCompra = 0;
         List<Entrada> entradasFinales = new ArrayList<>();
     
-        // DEBUG: Iniciando creación de entradas finales
+        
         for (CompraTemporal c : comprasTemp){
             double precioConDesc = c.precioBase * (1 - c.descuentoIndividual);
             if (descuentoMultiple > 0){
@@ -121,7 +121,6 @@ public class BienvenidosTeatroMoro {
             totalEntradasVendidas++;
             totalCompra += precioConDesc;
             
-            // DEBUG: Entrada creada y registrada
         }
         
         System.out.println("\n::::RESUMEN TOTAL DE LA COMPRA::::");
@@ -185,7 +184,7 @@ public class BienvenidosTeatroMoro {
             }
             System.out.println();
         }
-        System.out.println("Leyenda: [0]=Libre [X]=Vendido");
+        System.out.println("Leyenda: [0]=Libre [E]=Escogido [X]=Vendido");
     }  
     
     private static String seleccionarZona(Scanner scanner){
